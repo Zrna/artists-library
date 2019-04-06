@@ -1,29 +1,24 @@
 import React from "react";
 
 const Related = props => {
-  var relatedTemplate;
+  const url = `/artist/${props.artistId}/related`;
 
-  const getRelatedArtists = () => {
-    const url = `/artist/${props.artistId}/related`;
-
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
-        for (let i = 0; i < 6; i++) {
-          const artist = res.data[i];
-          const name = artist.name;
-          const numFans = artist.nb_fan;
-          const img = artist.picture;
-          console.log(name, numFans, img);
-        }
-      })
-      .catch(err => console.log(err));
-  };
+  fetch(url)
+    .then(res => res.json())
+    .then(res => {
+      for (let i = 0; i < 6; i++) {
+        const artist = res.data[i];
+        const name = artist.name;
+        const numFans = artist.nb_fan;
+        const img = artist.picture;
+        console.log(name, numFans, img);
+      }
+    })
+    .catch(err => console.log(err));
 
   return (
     <div>
-      <button onClick={getRelatedArtists}>povezani pjevaci</button>
-      {relatedTemplate}
+      <p>Related artists</p>
     </div>
   );
 };
