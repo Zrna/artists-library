@@ -14,7 +14,8 @@ class Main extends Component {
     audio: "",
     albumTitle: "",
     showProfile: false,
-    relatedArtist: ""
+    relatedArtist: "",
+    error: ""
   };
 
   // Get input data
@@ -22,7 +23,8 @@ class Main extends Component {
     const artistName = event.target.value;
     this.setState({
       inputValue: artistName,
-      showProfile: false
+      showProfile: false,
+      error: ""
     });
   };
 
@@ -39,7 +41,12 @@ class Main extends Component {
         });
         this.setData(res);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.setState({
+          error: `Unable to find ${this.state.inputValue}`
+        });
+      });
   };
 
   // Setting data to show
@@ -114,6 +121,7 @@ class Main extends Component {
           <source src={this.state.audio} type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
+        <p>{this.state.error}</p>
         {this.state.showProfile ? (
           <Profile
             profileImg={this.state.artistImg}
