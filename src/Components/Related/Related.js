@@ -1,24 +1,46 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 const Related = props => {
-  const url = `/artist/${props.artistId}/related`;
+  // setup state
+  const [artists, setArtists] = useState(null);
+  const [error, setError] = useState(null);
 
-  fetch(url)
-    .then(res => res.json())
-    .then(res => {
-      for (let i = 0; i < 6; i++) {
-        const artist = res.data[i];
-        const name = artist.name;
-        const numFans = artist.nb_fan;
-        const img = artist.picture;
-        console.log(name, numFans, img);
-      }
-    })
-    .catch(err => console.log(err));
+  // setup click handler
+  const getRelatedArtists = useCallback(async () => {
+    try {
+      // fetch data from API
+      const res = await fetch(`/artist/${props.artistId}/related`);
+      const json = await res.json();
+
+      // set state
+      setArtists(json.data);
+      setError(null);
+    } catch (e) {
+      console.error(e);
+      setError("Unable to fetch related artists");
+    }
+  }, [props.artistId]);
+
+  // setup render helper
+  const renderArtist = (artist, key) => {
+    console.log(artist);
+    return (
+      <div key={key} style={{ display: "inline-block" }}>
+        <img src={artist.picture} alt={artist.name} />
+        <p>{artist.name}</p>
+        <p>Fans: {artist.nb_fan}</p>
+      </div>
+    );
+  };
 
   return (
     <div>
-      <p>Related artists</p>
+      <div>
+        <p>Related artists</p>
+        <button onClick={getRelatedArtists}>get</button>
+      </div>
+      {error}
+      {artists && artists.map(renderArtist)}
     </div>
   );
 };
