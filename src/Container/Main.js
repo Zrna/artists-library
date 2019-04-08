@@ -3,20 +3,25 @@ import React, { Component } from "react";
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
 
+const initialState = {
+  inputValue: "",
+  artistImg: "",
+  artistName: "",
+  artistId: null,
+  numFans: null,
+  numAlbums: null,
+  audio: "",
+  albumTitle: "",
+  showProfile: false,
+  relatedArtist: "",
+  error: ""
+};
+
 class Main extends Component {
-  state = {
-    inputValue: "",
-    artistImg: "",
-    artistName: "",
-    artistId: null,
-    numFans: null,
-    numAlbums: null,
-    audio: "",
-    albumTitle: "",
-    showProfile: false,
-    relatedArtist: "",
-    error: ""
-  };
+  constructor() {
+    super();
+    this.state = initialState;
+  }
 
   // Get input data
   updateInputValue = event => {
@@ -104,10 +109,18 @@ class Main extends Component {
     this.getArtistProfileData();
   };
 
+  reset = () => {
+    this.setState(initialState);
+  };
+
   render() {
     return (
       <div>
-        <input value={this.inputValue} onChange={this.updateInputValue} />
+        <input
+          value={this.inputValue}
+          onChange={this.updateInputValue}
+          placeholder="Type artist name"
+        />
         <button onClick={this.getApiData}>click</button>
 
         <p>{this.state.error}</p>
@@ -120,6 +133,7 @@ class Main extends Component {
             numAlbums={this.state.numAlbums}
             albumTitle={this.state.albumTitle}
             audio={this.state.audio}
+            close={this.reset}
           />
         ) : (
           <Preview

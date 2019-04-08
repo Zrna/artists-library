@@ -6,6 +6,7 @@ import Related from "../Related/Related";
 const Profile = props => {
   return (
     <div>
+      <button onClick={props.close}>X</button>
       <img src={props.profileImg} alt={props.artistName} />
       <ReactAudioPlayer src={props.audio} controls />
       <p>{props.artistName}</p>
