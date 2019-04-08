@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 
 const Related = props => {
   // setup state
@@ -21,6 +21,11 @@ const Related = props => {
     }
   }, [props.artistId]);
 
+  // Used to automatic display related artists when Component is mounted
+  useEffect(() => {
+    getRelatedArtists();
+  }, []);
+
   // setup render helper
   const renderArtist = (artist, key) => {
     console.log(artist);
@@ -37,10 +42,9 @@ const Related = props => {
     <div>
       <div>
         <p>Related artists</p>
-        <button onClick={getRelatedArtists}>get</button>
       </div>
       {error}
-      {artists && artists.map(renderArtist)}
+      {artists && artists.slice(0, 10).map(renderArtist)}
     </div>
   );
 };
