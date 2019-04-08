@@ -69,19 +69,12 @@ class Main extends Component {
       }));
     }
 
-    this.setState(
-      {
-        artistId,
-        artistName,
-        artistImg,
-        audio
-      },
-      // without this music sample is not playing
-      function() {
-        this.refs.audio.pause();
-        this.refs.audio.load();
-      }
-    );
+    this.setState({
+      artistId,
+      artistName,
+      artistImg,
+      audio
+    });
   };
 
   // API request for Artist profile
@@ -117,10 +110,6 @@ class Main extends Component {
         <input value={this.inputValue} onChange={this.updateInputValue} />
         <button onClick={this.getApiData}>click</button>
 
-        <audio controls ref="audio">
-          <source src={this.state.audio} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
         <p>{this.state.error}</p>
         {this.state.showProfile ? (
           <Profile
@@ -130,6 +119,7 @@ class Main extends Component {
             numFans={this.state.numFans}
             numAlbums={this.state.numAlbums}
             albumTitle={this.state.albumTitle}
+            audio={this.state.audio}
           />
         ) : (
           <Preview
