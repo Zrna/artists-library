@@ -2,7 +2,7 @@ import React from "react";
 
 const ArtistPreview = props => {
   return (
-    <div>
+    <div className="text-center">
       <img
         src={props.profileImg}
         alt={props.artistName}

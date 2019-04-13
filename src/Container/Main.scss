@@ -1,0 +1,38 @@
+@import "../Scss/variables";
+
+.error-msg {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.container-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.form-control {
+  background: $light-gray;
+  border-color: #ccc !important;
+  box-shadow: none !important;
+  margin-right: 10px;
+  border-radius: 0.25rem !important;
+
+  &:focus {
+    background: $white;
+  }
+}
+
+.input-group {
+  width: calc(100% - 20vw) !important;
+  margin: 0 auto;
+}
+
+button:focus,
+.btn-primary,
+.btn-primary:focus {
+  box-shadow: none;
+}

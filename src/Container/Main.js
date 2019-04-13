@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Container, InputGroup, Input, Button } from "reactstrap";
+
+import "./Main.scss";
 
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
@@ -101,6 +104,14 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
+  inputEnterSubmit = event => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      event.stopPropagation();
+      this.getApiData();
+    }
+  };
+
   showProfile = () => {
     this.setState({
       showProfile: true
@@ -115,34 +126,46 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          value={this.inputValue}
-          onChange={this.updateInputValue}
-          placeholder="Type artist name"
-        />
-        <button onClick={this.getApiData}>click</button>
+      <Fragment>
+        <section>
+          <Container className="container-center">
+            <h1 className="text-center pb-4">
+              Search for your favorite artist
+            </h1>
+            <InputGroup>
+              <Input
+                value={this.inputValue}
+                onChange={this.updateInputValue}
+                placeholder="Type artist name"
+                onKeyDown={this.inputEnterSubmit}
+              />
+              <Button type="submit" color="primary" onClick={this.getApiData}>
+                Search
+              </Button>
+            </InputGroup>
 
-        <p>{this.state.error}</p>
-        {this.state.showProfile ? (
-          <Profile
-            profileImg={this.state.artistImg}
-            artistName={this.state.artistName}
-            artistId={this.state.artistId}
-            numFans={this.state.numFans}
-            numAlbums={this.state.numAlbums}
-            albumTitle={this.state.albumTitle}
-            audio={this.state.audio}
-            close={this.reset}
-          />
-        ) : (
-          <Preview
-            profileImg={this.state.artistImg}
-            artistName={this.state.artistName}
-            showProfile={this.showProfile}
-          />
-        )}
-      </div>
+            <p className="error-msg">{this.state.error}</p>
+            {this.state.showProfile ? (
+              <Profile
+                profileImg={this.state.artistImg}
+                artistName={this.state.artistName}
+                artistId={this.state.artistId}
+                numFans={this.state.numFans}
+                numAlbums={this.state.numAlbums}
+                albumTitle={this.state.albumTitle}
+                audio={this.state.audio}
+                close={this.reset}
+              />
+            ) : (
+              <Preview
+                profileImg={this.state.artistImg}
+                artistName={this.state.artistName}
+                showProfile={this.showProfile}
+              />
+            )}
+          </Container>
+        </section>
+      </Fragment>
     );
   }
 }
