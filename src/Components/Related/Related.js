@@ -30,7 +30,7 @@ const Related = props => {
   const renderArtist = (artist, key) => {
     console.log(artist);
     return (
-      <div key={key} style={{ display: "inline-block" }}>
+      <div key={key} style={{ display: "inline-block", margin: "15px" }}>
         <img src={artist.picture} alt={artist.name} />
         <p>{artist.name}</p>
         <p>Fans: {artist.nb_fan}</p>
@@ -44,7 +44,7 @@ const Related = props => {
         <p>Related artists</p>
       </div>
       {error}
-      {artists && artists.slice(0, 10).map(renderArtist)}
+      {artists && artists.slice(0, 14).map(renderArtist)}
     </div>
   );
 };

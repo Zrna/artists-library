@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Preview.scss";
+
 const ArtistPreview = props => {
   return (
     <div className="text-center">
