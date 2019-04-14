@@ -17,7 +17,8 @@ const initialState = {
   albumTitle: "",
   showProfile: false,
   relatedArtist: "",
-  error: ""
+  error: "",
+  modal: false
 };
 
 class Main extends Component {
@@ -113,9 +114,10 @@ class Main extends Component {
   };
 
   showProfile = () => {
-    this.setState({
+    this.setState(prevState => ({
+      modal: !prevState.modal,
       showProfile: true
-    });
+    }));
 
     this.getArtistProfileData();
   };
@@ -155,6 +157,8 @@ class Main extends Component {
                 albumTitle={this.state.albumTitle}
                 audio={this.state.audio}
                 close={this.reset}
+                modal={this.state.modal}
+                toggle={this.toggle}
               />
             ) : (
               <Preview
