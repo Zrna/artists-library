@@ -1,0 +1,22 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+}
+
+footer > div.container {
+  position: relative;
+  left: -50%;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+div.container > p {
+  margin-bottom: 10px !important;
+  font-size: 14px;
+}
