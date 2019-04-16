@@ -5,6 +5,7 @@ import "./Main.scss";
 
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
+import Footer from "../Components/Footer/Footer";
 
 const initialState = {
   inputValue: "",
@@ -51,10 +52,17 @@ class Main extends Component {
         this.setData(res);
       })
       .catch(err => {
-        console.log(err);
-        this.setState({
-          error: `Unable to find ${this.state.inputValue}`
-        });
+        // checking if input field contains only space/spaces OR is empty string
+        if (
+          /^\s+$/.test(this.state.inputValue) ||
+          this.state.inputValue === ""
+        ) {
+          this.setState({ error: "Input field can't be empty!" });
+        } else {
+          this.setState({
+            error: `Unable to find ${this.state.inputValue}`
+          });
+        }
       });
   };
 
@@ -132,7 +140,7 @@ class Main extends Component {
         <section>
           <Container className="container-center">
             <h1 className="text-center pb-4">
-              Search for your favorite artist
+              Search for your favorite music artist
             </h1>
             <InputGroup>
               <Input
@@ -169,6 +177,7 @@ class Main extends Component {
             )}
           </Container>
         </section>
+        <Footer />
       </Fragment>
     );
   }
