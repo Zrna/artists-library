@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
+import { Container, Row, Col, Modal, ModalHeader, ModalBody } from "reactstrap";
 import ReactAudioPlayer from "react-audio-player";
 
 import "./Profile.scss";
@@ -20,7 +11,7 @@ const Profile = props => {
     <div>
       <Modal isOpen={props.modal}>
         <Container>
-          <ModalHeader toggle={props.toggle}>{props.artistName}</ModalHeader>
+          <ModalHeader toggle={props.close}>{props.artistName}</ModalHeader>
           <ModalBody>
             <Row>
               <Col>
@@ -28,11 +19,11 @@ const Profile = props => {
               </Col>
               <Col>
                 <p>
-                  <i class="fas fa-users mr-4" title="Fans" />
+                  <i className="fas fa-users mr-4" title="Fans" />
                   {props.numFans}
                 </p>
                 <p>
-                  <i class="fas fa-music mr-4" title="Number of albums" />
+                  <i className="fas fa-music mr-4" title="Number of albums" />
                   {props.numAlbums}
                 </p>
                 <p>Albums names: {props.albumTitle}</p>
@@ -43,11 +34,6 @@ const Profile = props => {
               <Related artistId={props.artistId} />
             </Row>
           </ModalBody>
-          <ModalFooter>
-            <Button onClick={props.close} color="secondary">
-              Close
-            </Button>
-          </ModalFooter>
         </Container>
       </Modal>
     </div>
