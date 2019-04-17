@@ -1,3 +1,13 @@
 img:hover {
   cursor: pointer;
 }
+
+.artist-name {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 720px) {
+  img {
+    width: 160px;
+  }
+}

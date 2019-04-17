@@ -18,5 +18,10 @@ a:focus {
 
 div.container > p {
   margin-bottom: 10px !important;
-  font-size: 14px;
+}
+
+@media screen and (max-width: 720px) {
+  div.container > p {
+    font-size: 12px;
+  }
 }

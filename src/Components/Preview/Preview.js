@@ -10,7 +10,7 @@ const ArtistPreview = props => {
         alt={props.artistName}
         onClick={props.showProfile}
       />
-      <p>{props.artistName}</p>
+      <p className="artist-name">{props.artistName}</p>
     </div>
   );
 };

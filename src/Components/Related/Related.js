@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 
+import "./Related.scss";
+
 const Related = props => {
   // setup state
   const [artists, setArtists] = useState(null);
@@ -17,7 +19,7 @@ const Related = props => {
       setError(null);
     } catch (e) {
       console.error(e);
-      setError("Unable to fetch related artists");
+      setError("Unable to find related artists");
     }
   }, [props.artistId]);
 
@@ -30,8 +32,8 @@ const Related = props => {
   const renderArtist = (artist, key) => {
     console.log(artist);
     return (
-      <div key={key} style={{ display: "inline-block", margin: "15px" }}>
-        <img src={artist.picture} alt={artist.name} />
+      <div key={key} className="related-artist-box">
+        <img src={artist.picture} alt={artist.name} className="relatedImg" />
         <p>{artist.name}</p>
         <p>Fans: {artist.nb_fan}</p>
       </div>
@@ -39,7 +41,7 @@ const Related = props => {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <div>
         <p>Related artists</p>
       </div>

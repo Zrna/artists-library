@@ -49,3 +49,13 @@ button:focus,
 .btn-primary:focus {
   box-shadow: none;
 }
+
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 30px !important;
+  }
+
+  .input-group {
+    width: 100% !important;
+  }
+}
