@@ -14,14 +14,14 @@ const Profile = props => {
           <ModalHeader toggle={props.close}>{props.artistName}</ModalHeader>
           <ModalBody>
             <Row>
-              <Col sm="4">
+              <Col sm="4" md="5" lg="4">
                 <img
                   src={props.profileImg}
                   alt={props.artistName}
                   className="mb-4"
                 />
               </Col>
-              <Col sm="8">
+              <Col sm="8" md="7" lg="8">
                 <p>
                   <i className="fas fa-users mr-4" title="Fans" />
                   {props.numFans}
