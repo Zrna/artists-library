@@ -11,7 +11,10 @@ const Related = props => {
   const getRelatedArtists = useCallback(async () => {
     try {
       // fetch data from API
-      const res = await fetch(`/artist/${props.artistId}/related`);
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      const url = `${proxyurl}https://api.deezer.com`;
+
+      const res = await fetch(`${url}/artist/${props.artistId}/related`);
       const json = await res.json();
 
       // set state

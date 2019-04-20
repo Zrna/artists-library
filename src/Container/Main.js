@@ -40,7 +40,11 @@ class Main extends Component {
 
   // API request
   getApiData = () => {
-    const url = `/search?q=artist:"${this.state.inputValue}"`;
+    // using cors-anywhere.herokuapp.com because issues with CORS and because that results from API are not showing
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = `${proxyurl}https://api.deezer.com/search?q=artist:"${
+      this.state.inputValue
+    }"`;
 
     fetch(url)
       .then(res => res.json())
@@ -96,11 +100,16 @@ class Main extends Component {
 
   // API request for Artist profile
   getArtistProfileData = () => {
-    const url = `/artist/${this.state.artistId}`;
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = `${proxyurl}https://api.deezer.com/artist/${
+      this.state.artistId
+    }`;
 
     fetch(url)
       .then(res => res.json())
       .then(res => {
+        console.log("number", res);
+        console.log(url);
         const numAlbums = res.nb_album;
         const numFans = res.nb_fan;
 
