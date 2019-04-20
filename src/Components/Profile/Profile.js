@@ -30,7 +30,10 @@ const Profile = props => {
                   <i className="fas fa-music mr-4" title="Number of albums" />
                   {props.numAlbums}
                 </p>
-                <p>Albums names: {props.albumTitle}</p>
+                <p>
+                  <i className="fas fa-microphone mr-4" title="Songs" />
+                  {props.songName}
+                </p>
                 <ReactAudioPlayer src={props.audio} controls />
               </Col>
             </Row>

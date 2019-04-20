@@ -15,7 +15,7 @@ const initialState = {
   numFans: null,
   numAlbums: null,
   audio: "",
-  albumTitle: "",
+  songName: "",
   showProfile: false,
   relatedArtist: "",
   error: "",
@@ -46,7 +46,7 @@ class Main extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          albumTitle: "",
+          songName: "",
           showProfile: false
         });
         this.setData(res);
@@ -78,11 +78,11 @@ class Main extends Component {
     const audio = data.preview;
 
     for (let n in res.data) {
-      const obj = res.data[n];
-      const albumTitle = `${obj.title}, `;
+      const data = res.data[n];
+      const songName = `${data.title}, `;
 
       this.setState(prevState => ({
-        albumTitle: [...prevState.albumTitle, albumTitle]
+        songName: [...prevState.songName, songName]
       }));
     }
 
@@ -101,7 +101,6 @@ class Main extends Component {
     fetch(url)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         const numAlbums = res.nb_album;
         const numFans = res.nb_fan;
 
@@ -162,7 +161,7 @@ class Main extends Component {
                 artistId={this.state.artistId}
                 numFans={this.state.numFans}
                 numAlbums={this.state.numAlbums}
-                albumTitle={this.state.albumTitle}
+                songName={this.state.songName}
                 audio={this.state.audio}
                 close={this.reset}
                 modal={this.state.modal}

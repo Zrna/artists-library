@@ -9,6 +9,7 @@ const ArtistPreview = props => {
         src={props.profileImg}
         alt={props.artistName}
         onClick={props.showProfile}
+        className="previewImg"
       />
       <p className="artist-name">{props.artistName}</p>
     </div>
