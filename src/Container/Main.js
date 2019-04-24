@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { Container, InputGroup, Input, Button } from "reactstrap";
+import { Container } from "reactstrap";
 
 import "./Main.scss";
 
+import HomePage from "../Components/HomePage/HomePage";
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
 import Footer from "../Components/Footer/Footer";
@@ -33,7 +34,6 @@ class Main extends Component {
     const artistName = event.target.value;
     this.setState({
       inputValue: artistName,
-      showProfile: false,
       error: ""
     });
   };
@@ -50,8 +50,7 @@ class Main extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          songName: "",
-          showProfile: false
+          songName: ""
         });
         this.setData(res);
       })
@@ -147,20 +146,12 @@ class Main extends Component {
       <Fragment>
         <section>
           <Container className="container-center">
-            <h1 className="text-center pb-4">
-              Search for your favorite music artist
-            </h1>
-            <InputGroup>
-              <Input
-                value={this.inputValue}
-                onChange={this.updateInputValue}
-                placeholder="Type artist name"
-                onKeyDown={this.inputEnterSubmit}
-              />
-              <Button type="submit" color="primary" onClick={this.getApiData}>
-                Search
-              </Button>
-            </InputGroup>
+            <HomePage
+              value={this.inputValue}
+              onChange={this.updateInputValue}
+              onKeyDown={this.inputEnterSubmit}
+              onClick={this.getApiData}
+            />
 
             <p className="error-msg">{this.state.error}</p>
             {this.state.showProfile ? (
