@@ -3,6 +3,8 @@ import { InputGroup, Input, Button } from "reactstrap";
 
 import "../../Container/Main.scss";
 
+import Loader from "../Loader/Loader";
+
 const HomePage = props => {
   return (
     <Fragment>
@@ -20,6 +22,8 @@ const HomePage = props => {
           Search
         </Button>
       </InputGroup>
+      <p className="error-msg">{props.error}</p>
+      <div>{props.loader ? <Loader /> : null}</div>
     </Fragment>
   );
 };

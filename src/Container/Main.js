@@ -17,10 +17,12 @@ const initialState = {
   numAlbums: null,
   audio: "",
   songName: "",
+  showPreview: false,
   showProfile: false,
   relatedArtist: "",
   error: "",
-  modal: false
+  modal: false,
+  loader: false
 };
 
 class Main extends Component {
@@ -34,12 +36,17 @@ class Main extends Component {
     const artistName = event.target.value;
     this.setState({
       inputValue: artistName,
-      error: ""
+      error: "",
+      showPreview: false
     });
   };
 
   // API request
   getApiData = () => {
+    this.setState({
+      loader: true
+    });
+
     // using cors-anywhere.herokuapp.com because issues with CORS and because that results from API are not showing
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = `${proxyurl}https://api.deezer.com/search?q=artist:"${
@@ -60,10 +67,14 @@ class Main extends Component {
           /^\s+$/.test(this.state.inputValue) ||
           this.state.inputValue === ""
         ) {
-          this.setState({ error: "Input field can't be empty!" });
+          this.setState({
+            error: "Input field can't be empty!",
+            loader: false
+          });
         } else {
           this.setState({
-            error: `Unable to find ${this.state.inputValue}`
+            error: `Unable to find ${this.state.inputValue}`,
+            loader: false
           });
         }
       });
@@ -71,8 +82,6 @@ class Main extends Component {
 
   // Setting data to show
   setData = res => {
-    console.log(res);
-
     const data = res.data[0];
 
     const artistId = data.artist.id;
@@ -93,7 +102,9 @@ class Main extends Component {
       artistId,
       artistName,
       artistImg,
-      audio
+      audio,
+      showPreview: true,
+      loader: false
     });
   };
 
@@ -107,8 +118,6 @@ class Main extends Component {
     fetch(url)
       .then(res => res.json())
       .then(res => {
-        console.log("number", res);
-        console.log(url);
         const numAlbums = res.nb_album;
         const numFans = res.nb_fan;
 
@@ -131,7 +140,8 @@ class Main extends Component {
   showProfile = () => {
     this.setState(prevState => ({
       modal: !prevState.modal,
-      showProfile: true
+      showProfile: true,
+      showPreview: false
     }));
 
     this.getArtistProfileData();
@@ -151,9 +161,18 @@ class Main extends Component {
               onChange={this.updateInputValue}
               onKeyDown={this.inputEnterSubmit}
               onClick={this.getApiData}
+              error={this.state.error}
+              loader={this.state.loader}
             />
 
-            <p className="error-msg">{this.state.error}</p>
+            {this.state.showPreview ? (
+              <Preview
+                profileImg={this.state.artistImg}
+                artistName={this.state.artistName}
+                showProfile={this.showProfile}
+              />
+            ) : null}
+
             {this.state.showProfile ? (
               <Profile
                 profileImg={this.state.artistImg}
@@ -167,13 +186,7 @@ class Main extends Component {
                 modal={this.state.modal}
                 toggle={this.toggle}
               />
-            ) : (
-              <Preview
-                profileImg={this.state.artistImg}
-                artistName={this.state.artistName}
-                showProfile={this.showProfile}
-              />
-            )}
+            ) : null}
           </Container>
         </section>
         <Footer />

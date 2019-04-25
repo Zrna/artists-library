@@ -33,7 +33,6 @@ const Related = props => {
 
   // setup render helper
   const renderArtist = (artist, key) => {
-    console.log(artist);
     return (
       <div key={key} className="related-artist-box">
         <img src={artist.picture} alt={artist.name} className="relatedImg" />
