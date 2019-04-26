@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 
 import "./Related.scss";
 
+import proxyurl from "../../corsLink";
+
 const Related = props => {
   // setup state
   const [artists, setArtists] = useState(null);
@@ -11,7 +13,6 @@ const Related = props => {
   const getRelatedArtists = useCallback(async () => {
     try {
       // fetch data from API
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
       const url = `${proxyurl}https://api.deezer.com`;
 
       const res = await fetch(`${url}/artist/${props.artistId}/related`);

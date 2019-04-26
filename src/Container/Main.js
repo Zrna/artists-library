@@ -3,6 +3,7 @@ import { Container } from "reactstrap";
 
 import "./Main.scss";
 
+import proxyurl from "../corsLink";
 import HomePage from "../Components/HomePage/HomePage";
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
@@ -47,8 +48,6 @@ class Main extends Component {
       loader: true
     });
 
-    // using cors-anywhere.herokuapp.com because issues with CORS and because that results from API are not showing
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = `${proxyurl}https://api.deezer.com/search?q=artist:"${
       this.state.inputValue
     }"`;
@@ -110,7 +109,6 @@ class Main extends Component {
 
   // API request for Artist profile
   getArtistProfileData = () => {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = `${proxyurl}https://api.deezer.com/artist/${
       this.state.artistId
     }`;
