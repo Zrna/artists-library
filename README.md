@@ -10,11 +10,9 @@ All results depends on the Deezer API.
 
 Application created using ReactJS, Reactstrap and Deezer API.
 
-## Screenshots
+## Preview
 
-![home-page](https://user-images.githubusercontent.com/22341530/56472432-b0f41380-645e-11e9-9872-6a97c0d0f16d.png)
-![home-preview](https://user-images.githubusercontent.com/22341530/56472593-991d8f00-6460-11e9-8cbd-8b4e1483cadf.png)
-![artist-page](https://user-images.githubusercontent.com/22341530/56472445-c2d5b680-645e-11e9-9960-ff842b32ce78.png)
+![application-preview](https://user-images.githubusercontent.com/22341530/57242518-fd7d4880-7033-11e9-8b6f-0833b4ed24c6.gif)
 
 ## Installation
 
