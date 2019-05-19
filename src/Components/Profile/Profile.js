@@ -1,4 +1,7 @@
 import React from "react";
+
+import { connect } from "react-redux";
+
 import { Container, Row, Col, Modal, ModalHeader, ModalBody } from "reactstrap";
 import ReactAudioPlayer from "react-audio-player";
 
@@ -16,7 +19,7 @@ const Profile = props => {
             <Row>
               <Col sm="4" md="5" lg="4">
                 <img
-                  src={props.profileImg}
+                  src={props.artistImg}
                   alt={props.artistName}
                   className="mb-4"
                 />
@@ -47,4 +50,19 @@ const Profile = props => {
   );
 };
 
-export default Profile;
+const mapStateToProps = state => {
+  return {
+    artistId: state.getDataReducer.artistId,
+    artistName: state.getDataReducer.artistName,
+    artistImg: state.getDataReducer.artistImg,
+    audio: state.getDataReducer.audio,
+    songName: state.getDataReducer.songName,
+    numFans: state.showProfileReducer.numFans,
+    numAlbums: state.showProfileReducer.numAlbums
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Profile);
