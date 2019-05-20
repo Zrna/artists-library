@@ -23,7 +23,8 @@ export const getApiData = inputValue => dispatch => {
         artistName: data.artist.name,
         artistImg: data.artist.picture_medium,
         audio: data.preview,
-        songName: data.title
+        songName: data.title,
+        loader: false
       };
 
       dispatch({
