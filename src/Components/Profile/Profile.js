@@ -26,15 +26,15 @@ const Profile = props => {
               </Col>
               <Col sm="8" md="7" lg="8">
                 <p>
-                  <i className="fas fa-users mr-4" title="Fans" />
+                  <i className="fas fa-users" title="Fans" />
                   {props.numFans}
                 </p>
                 <p>
-                  <i className="fas fa-music mr-4" title="Number of albums" />
+                  <i className="fas fa-music" title="Number of albums" />
                   {props.numAlbums}
                 </p>
                 <p>
-                  <i className="fas fa-microphone mr-4" title="Songs" />
+                  <i className="fas fa-microphone" title="Songs" />
                   {props.songName}
                 </p>
                 <ReactAudioPlayer src={props.audio} controls />
