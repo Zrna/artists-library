@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import Main from "./Container/Main";
+import Main from "./Containers/Main";
 
 class App extends Component {
   render() {

@@ -7,7 +7,7 @@ import { showProfile } from "../actions/showProfileAction";
 import { Container } from "reactstrap";
 import "./Main.scss";
 
-import HomePage from "../Components/HomePage/HomePage";
+import HomePage from "./HomePage/HomePage";
 import Preview from "../Components/Preview/Preview";
 import Profile from "../Components/Profile/Profile";
 import Footer from "../Components/Footer/Footer";

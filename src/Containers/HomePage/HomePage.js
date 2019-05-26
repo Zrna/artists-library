@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { getApiData } from "../../actions/getDataAction";
 import { InputGroup, Input, Button } from "reactstrap";
 
-import "../../Container/Main.scss";
+import "../Main.scss";
 
-import Loader from "../Loader/Loader";
+import Loader from "../../Components/Loader/Loader";
 
 class HomePage extends Component {
   constructor() {
