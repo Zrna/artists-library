@@ -16,7 +16,8 @@ const getDataReducer = (state = initialState, action) => {
         audio: action.payload.audio,
         songName: action.payload.songName,
         error: action.payload.error,
-        loader: action.payload.loader
+        loader: action.payload.loader,
+        showPreview: action.payload.showPreview
       };
     default:
       return newState;

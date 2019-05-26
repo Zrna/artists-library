@@ -9,21 +9,25 @@ export const getApiData = inputValue => dispatch => {
       console.log(res);
       const data = res.data[0];
 
-      // for (let n in res.data) {
-      //   const data = res.data[n];
-      //   const songName = `${data.title}, `;
+      // looping through response to save all songs name => saved in 'const songsName'
+      const saveAllSongs = res => {
+        let songName = "";
+        for (let n in res.data) {
+          const data = res.data[n];
+          songName += `${data.title}, `;
+        }
+        return songName;
+      };
 
-      //   this.setState(prevState => ({
-      //     songName: [...prevState.songName, songName]
-      //   }));
-      // }
+      const songsName = saveAllSongs(res);
 
       const artist = {
         artistId: data.artist.id,
         artistName: data.artist.name,
         artistImg: data.artist.picture_medium,
         audio: data.preview,
-        songName: data.title,
+        songName: songsName,
+        showPreview: true,
         loader: false
       };
 

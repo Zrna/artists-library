@@ -12,7 +12,8 @@ const showProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         numAlbums: action.payload.numAlbums,
-        numFans: action.payload.numFans
+        numFans: action.payload.numFans,
+        showProfile: action.payload.showProfile
       };
     default:
       return newState;

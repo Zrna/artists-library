@@ -9,7 +9,8 @@ export const showProfile = artistId => dispatch => {
     .then(res => {
       const artistNumbers = {
         numAlbums: res.nb_album,
-        numFans: res.nb_fan
+        numFans: res.nb_fan,
+        showProfile: true
       };
 
       dispatch({

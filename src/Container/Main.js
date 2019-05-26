@@ -14,8 +14,6 @@ import Footer from "../Components/Footer/Footer";
 
 const initialState = {
   artistId: null,
-  showPreview: false,
-  showProfile: false,
   modal: false
 };
 
@@ -33,11 +31,8 @@ class Main extends Component {
 
   showProfile = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal,
-      showProfile: true,
-      showPreview: false
+      modal: !prevState.modal
     }));
-
     this.getArtistProfileData();
   };
 
@@ -52,16 +47,15 @@ class Main extends Component {
           <Container className="container-center">
             <HomePage />
 
-            {/* {this.state.showPreview ? <Preview /> : null} */}
-            <Preview showProfile={this.showProfile} />
-
-            {this.state.showProfile ? (
-              <Profile
-                close={this.reset}
-                modal={this.state.modal}
-                toggle={this.toggle}
-              />
+            {this.props.showPreview ? (
+              <Preview showProfile={this.showProfile} />
             ) : null}
+
+            <Profile
+              close={this.reset}
+              modal={this.state.modal}
+              toggle={this.toggle}
+            />
           </Container>
         </section>
         <Footer />
@@ -72,7 +66,9 @@ class Main extends Component {
 
 const mapStateToProps = state => {
   return {
-    artistId: state.getDataReducer.artistId
+    artistId: state.getDataReducer.artistId,
+    showPreview: state.getDataReducer.showPreview,
+    showProfile: state.showProfileReducer.showProfile
   };
 };
 
