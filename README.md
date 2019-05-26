@@ -6,9 +6,9 @@ Web application where you can find informations about your favorite music artist
 
 **Try app [here](https://artists-library.herokuapp.com/).**
 
-All results depends on the Deezer API.
+Application created using ReactJS, Redux, Reactstrap and Deezer API.
 
-Application created using ReactJS, Reactstrap and Deezer API.
+_All results depends on the Deezer API._
 
 ## Preview
 
