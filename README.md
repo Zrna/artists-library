@@ -4,7 +4,7 @@
 
 Web application where you can find informations about your favorite music artist.
 
-**Try app [here](https://artists-library.herokuapp.com/).**
+**Try app [here](https://zrna.github.io/artists-library/).**
 
 Application created using ReactJS, Redux, Reactstrap and Deezer API.
 
