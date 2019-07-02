@@ -1,3 +1,5 @@
+import { actionTypes } from '../actions/types';
+
 const initialState = {
   artistName: ""
 };
@@ -6,8 +8,7 @@ const getDataReducer = (state = initialState, action) => {
   const newState = { ...state };
 
   switch (action.type) {
-    case "GET_API_DATA":
-      console.log("GET_API_DATA reducer okinut");
+    case actionTypes.GET_API_DATA:
       return {
         ...newState,
         artistId: action.payload.artistId,
