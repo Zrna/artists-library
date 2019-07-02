@@ -1,15 +1,15 @@
 {
   "main.css": "/artists-library/static/css/main.03f49412.chunk.css",
-  "main.js": "/artists-library/static/js/main.ab62f612.chunk.js",
-  "main.js.map": "/artists-library/static/js/main.ab62f612.chunk.js.map",
+  "main.js": "/artists-library/static/js/main.08c4a223.chunk.js",
+  "main.js.map": "/artists-library/static/js/main.08c4a223.chunk.js.map",
   "runtime~main.js": "/artists-library/static/js/runtime~main.5009559e.js",
   "runtime~main.js.map": "/artists-library/static/js/runtime~main.5009559e.js.map",
-  "static/css/2.f5cbaf9a.chunk.css": "/artists-library/static/css/2.f5cbaf9a.chunk.css",
-  "static/js/2.3fa56722.chunk.js": "/artists-library/static/js/2.3fa56722.chunk.js",
-  "static/js/2.3fa56722.chunk.js.map": "/artists-library/static/js/2.3fa56722.chunk.js.map",
+  "static/css/2.a552cb31.chunk.css": "/artists-library/static/css/2.a552cb31.chunk.css",
+  "static/js/2.4d4dcef8.chunk.js": "/artists-library/static/js/2.4d4dcef8.chunk.js",
+  "static/js/2.4d4dcef8.chunk.js.map": "/artists-library/static/js/2.4d4dcef8.chunk.js.map",
   "index.html": "/artists-library/index.html",
-  "precache-manifest.39be62334af79f56377a5fad52690a11.js": "/artists-library/precache-manifest.39be62334af79f56377a5fad52690a11.js",
+  "precache-manifest.acb5ab453a8f62f43c53fa14ed9e1f1c.js": "/artists-library/precache-manifest.acb5ab453a8f62f43c53fa14ed9e1f1c.js",
   "service-worker.js": "/artists-library/service-worker.js",
-  "static/css/2.f5cbaf9a.chunk.css.map": "/artists-library/static/css/2.f5cbaf9a.chunk.css.map",
+  "static/css/2.a552cb31.chunk.css.map": "/artists-library/static/css/2.a552cb31.chunk.css.map",
   "static/css/main.03f49412.chunk.css.map": "/artists-library/static/css/main.03f49412.chunk.css.map"
 }
