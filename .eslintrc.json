@@ -35,7 +35,7 @@
             "prefer-single"
         ],
         "semi": [
-            2,
+            "error",
             "always"
         ]
     }
