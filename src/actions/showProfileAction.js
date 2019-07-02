@@ -1,5 +1,7 @@
-import proxyurl from "../corsLink";
-import store from "../store";
+import { actionTypes } from '../actions/types';
+
+import proxyurl from '../corsLink';
+import store from '../store';
 
 export const showProfile = artistId => dispatch => {
   const url = `${proxyurl}https://api.deezer.com/artist/${artistId}`;
@@ -14,7 +16,7 @@ export const showProfile = artistId => dispatch => {
       };
 
       dispatch({
-        type: "SHOW_PROFILE",
+        type: actionTypes.SHOW_PROFILE,
         payload: artistNumbers
       });
     })

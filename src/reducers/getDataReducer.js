@@ -1,7 +1,7 @@
 import { actionTypes } from '../actions/types';
 
 const initialState = {
-  artistName: ""
+  artistName: ''
 };
 
 const getDataReducer = (state = initialState, action) => {

@@ -1,18 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
+/* eslint-disable no-unused-vars */
 
-import "./Preview.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+
+import './Preview.scss';
 
 const ArtistPreview = props => {
   return (
-    <div className="text-center" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className='text-center' style={{ backgroundColor: '#f5f5f5' }}>
       <img
         src={props.artistImg}
         alt={props.artistName}
         onClick={props.showProfile}
-        className="previewImg"
+        className='previewImg'
       />
-      <p className="artist-name">{props.artistName}</p>
+      <p className='artist-name'>{props.artistName}</p>
     </div>
   );
 };

@@ -1,4 +1,6 @@
-import proxyurl from "../corsLink";
+import { actionTypes } from '../actions/types';
+
+import proxyurl from '../corsLink';
 
 export const getApiData = inputValue => dispatch => {
   const url = `${proxyurl}https://api.deezer.com/search?q=artist:"${inputValue}"`;
@@ -11,7 +13,7 @@ export const getApiData = inputValue => dispatch => {
 
       // looping through response to save all songs name => saved in 'const songsName'
       const saveAllSongs = res => {
-        let songName = "";
+        let songName = '';
         for (let n in res.data) {
           const data = res.data[n];
           songName += `${data.title}, `;
@@ -32,21 +34,22 @@ export const getApiData = inputValue => dispatch => {
       };
 
       dispatch({
-        type: "GET_API_DATA",
+        type: actionTypes.GET_API_DATA,
         payload: artist
       });
     })
     .catch(err => {
+      console.log(err);
       let setError = {};
 
       // checking if input field contains only space/spaces OR is empty string
-      if (/^\s+$/.test(inputValue) || inputValue === "") {
+      if (/^\s+$/.test(inputValue) || inputValue === '') {
         setError = {
           error: "Input field can't be empty!",
           loader: false
         };
         dispatch({
-          type: "GET_API_DATA",
+          type: actionTypes.GET_API_DATA,
           payload: setError
         });
       } else {
@@ -56,7 +59,7 @@ export const getApiData = inputValue => dispatch => {
         };
 
         dispatch({
-          type: "GET_API_DATA",
+          type: actionTypes.GET_API_DATA,
           payload: setError
         });
       }

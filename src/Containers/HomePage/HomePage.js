@@ -1,17 +1,19 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import { getApiData } from "../../actions/getDataAction";
-import { InputGroup, Input, Button } from "reactstrap";
+/* eslint-disable no-unused-vars */
 
-import "../Main.scss";
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { getApiData } from '../../actions/getDataAction';
+import { InputGroup, Input, Button } from 'reactstrap';
 
-import Loader from "../../Components/Loader/Loader";
+import '../Main.scss';
+
+import Loader from '../../Components/Loader/Loader';
 
 class HomePage extends Component {
-  constructor() {
+  constructor () {
     super();
     this.state = {
-      inputValue: "",
+      inputValue: '',
       loader: false
     };
   }
@@ -31,38 +33,38 @@ class HomePage extends Component {
     const artistName = event.target.value;
     this.setState({
       inputValue: artistName,
-      error: "",
+      error: '',
       showPreview: false
     });
   };
 
   inputEnterSubmit = event => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       event.preventDefault();
       event.stopPropagation();
       this.getApiData();
     }
   };
 
-  render() {
+  render () {
     return (
       <Fragment>
-        <h1 className="text-center pb-4">
+        <h1 className='text-center pb-4'>
           Search for your favorite music artist
         </h1>
         <InputGroup>
           <Input
             value={this.state.inputValue}
             onChange={this.updateInputValue}
-            placeholder="Type artist name"
+            placeholder='Type artist name'
             onKeyDown={this.inputEnterSubmit}
           />
-          <Button type="submit" color="primary" onClick={this.getApiData}>
+          <Button type='submit' color='primary' onClick={this.getApiData}>
             Search
           </Button>
         </InputGroup>
         {this.state.loader && this.props.loader !== false ? <Loader /> : null}
-        <p className="error-msg">{this.props.error}</p>
+        <p className='error-msg'>{this.props.error}</p>
       </Fragment>
     );
   }

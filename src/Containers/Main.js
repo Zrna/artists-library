@@ -1,16 +1,18 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+/* eslint-disable no-unused-vars */
 
-import { getApiData } from "../actions/getDataAction";
-import { showProfile } from "../actions/showProfileAction";
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 
-import { Container } from "reactstrap";
-import "./Main.scss";
+import { getApiData } from '../actions/getDataAction';
+import { showProfile } from '../actions/showProfileAction';
 
-import HomePage from "./HomePage/HomePage";
-import Preview from "../Components/Preview/Preview";
-import Profile from "../Components/Profile/Profile";
-import Footer from "../Components/Footer/Footer";
+import { Container } from 'reactstrap';
+import './Main.scss';
+
+import HomePage from './HomePage/HomePage';
+import Preview from '../Components/Preview/Preview';
+import Profile from '../Components/Profile/Profile';
+import Footer from '../Components/Footer/Footer';
 
 const initialState = {
   artistId: null,
@@ -18,7 +20,7 @@ const initialState = {
 };
 
 class Main extends Component {
-  constructor() {
+  constructor () {
     super();
     this.state = initialState;
   }
@@ -40,11 +42,11 @@ class Main extends Component {
     this.setState(initialState);
   };
 
-  render() {
+  render () {
     return (
       <Fragment>
         <section>
-          <Container className="container-center">
+          <Container className='container-center'>
             <HomePage />
 
             {this.props.showPreview ? (

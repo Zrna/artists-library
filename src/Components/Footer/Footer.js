@@ -1,7 +1,9 @@
-import React from "react";
-import { Container } from "reactstrap";
+/* eslint-disable no-unused-vars */
 
-import "./Footer.scss";
+import React from 'react';
+import { Container } from 'reactstrap';
+
+import './Footer.scss';
 
 const Footer = () => {
   return (
@@ -9,11 +11,11 @@ const Footer = () => {
       <Container>
         <p>All results depends on the Deezer API</p>
         <p>
-          Made by{" "}
+          Made by
           <a
-            href="http://www.lukazrnic.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='http://www.lukazrnic.com'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Luka Zrnic
           </a>

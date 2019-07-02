@@ -1,8 +1,10 @@
-import React, { useState, useCallback, useEffect } from "react";
+/* eslint-disable no-unused-vars */
 
-import "./Related.scss";
+import React, { useState, useCallback, useEffect } from 'react';
 
-import proxyurl from "../../corsLink";
+import './Related.scss';
+
+import proxyurl from '../../corsLink';
 
 const Related = props => {
   // setup state
@@ -23,7 +25,7 @@ const Related = props => {
       setError(null);
     } catch (e) {
       console.error(e);
-      setError("Unable to find related artists");
+      setError('Unable to find related artists');
     }
   }, [props.artistId]);
 
@@ -35,8 +37,8 @@ const Related = props => {
   // setup render helper
   const renderArtist = (artist, key) => {
     return (
-      <div key={key} className="related-artist-box">
-        <img src={artist.picture} alt={artist.name} className="relatedImg" />
+      <div key={key} className='related-artist-box'>
+        <img src={artist.picture} alt={artist.name} className='relatedImg' />
         <p>{artist.name}</p>
         <p>Fans: {artist.nb_fan}</p>
       </div>
@@ -44,7 +46,7 @@ const Related = props => {
   };
 
   return (
-    <div className="mt-4">
+    <div className='mt-4'>
       <div>
         <p>Related artists</p>
       </div>

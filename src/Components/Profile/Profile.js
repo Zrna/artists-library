@@ -1,13 +1,15 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
 
-import { connect } from "react-redux";
+import React from 'react';
 
-import { Container, Row, Col, Modal, ModalHeader, ModalBody } from "reactstrap";
-import ReactAudioPlayer from "react-audio-player";
+import { connect } from 'react-redux';
 
-import "./Profile.scss";
+import { Container, Row, Col, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import ReactAudioPlayer from 'react-audio-player';
 
-import Related from "../Related/Related";
+import './Profile.scss';
+
+import Related from '../Related/Related';
 
 const Profile = props => {
   return (
@@ -17,24 +19,24 @@ const Profile = props => {
           <ModalHeader toggle={props.close}>{props.artistName}</ModalHeader>
           <ModalBody>
             <Row>
-              <Col sm="4" md="5" lg="4">
+              <Col sm='4' md='5' lg='4'>
                 <img
                   src={props.artistImg}
                   alt={props.artistName}
-                  className="mb-4"
+                  className='mb-4'
                 />
               </Col>
-              <Col sm="8" md="7" lg="8">
+              <Col sm='8' md='7' lg='8'>
                 <p>
-                  <i className="fas fa-users" title="Fans" />
+                  <i className='fas fa-users' title='Fans' />
                   {props.numFans}
                 </p>
                 <p>
-                  <i className="fas fa-music" title="Number of albums" />
+                  <i className='fas fa-music' title='Number of albums' />
                   {props.numAlbums}
                 </p>
                 <p>
-                  <i className="fas fa-microphone" title="Songs" />
+                  <i className='fas fa-microphone' title='Songs' />
                   {props.songName}
                 </p>
                 <ReactAudioPlayer src={props.audio} controls />
