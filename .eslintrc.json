@@ -37,6 +37,30 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-var": "error",
+        "no-multi-spaces": "error",
+        "no-trailing-spaces": "error",
+        "no-whitespace-before-property": "error",
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "eqeqeq": [
+            "error",
+            "always"
+        ],
+        "indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "no-mixed-spaces-and-tabs": "error",
+        "rest-spread-spacing": [
+            "error",
+            "never"
         ]
     }
 }
