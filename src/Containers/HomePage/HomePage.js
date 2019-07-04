@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getApiData } from '../../actions/getDataAction';
 import { InputGroup, Input, Button } from 'reactstrap';
@@ -48,7 +48,7 @@ class HomePage extends Component {
 
   render () {
     return (
-      <Fragment>
+      <>
         <h1 className='text-center pb-4'>
           Search for your favorite music artist
         </h1>
@@ -65,7 +65,7 @@ class HomePage extends Component {
         </InputGroup>
         {this.state.loader && this.props.loader !== false ? <Loader /> : null}
         <p className='error-msg'>{this.props.error}</p>
-      </Fragment>
+      </>
     );
   }
 }

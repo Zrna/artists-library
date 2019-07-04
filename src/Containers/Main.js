@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getApiData } from '../actions/getDataAction';
@@ -44,7 +44,7 @@ class Main extends Component {
 
   render () {
     return (
-      <Fragment>
+      <>
         <section>
           <Container className='container-center'>
             <HomePage />
@@ -61,7 +61,7 @@ class Main extends Component {
           </Container>
         </section>
         <Footer />
-      </Fragment>
+      </>
     );
   }
 }
