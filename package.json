@@ -15,6 +15,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.tsx",
     "lint:fix": "npm run lint -- --fix",
+    "clear:modules": "rm -rf node_modules",
     "deploy": "npm run build && gh-pages -d build"
   },
   "devDependencies": {
