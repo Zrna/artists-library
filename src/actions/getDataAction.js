@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/types';
+import { actionTypes } from './types';
 
 import proxyurl from '../corsLink';
 
