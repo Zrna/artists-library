@@ -2,7 +2,7 @@
 
 ## Description
 
-Web application where you can find informations about your favorite music artist.
+**Progressive Web Application (PWA)** where you can find informations about your favorite music artist.
 
 **Try app [here](https://zrna.github.io/artists-library/).**
 
