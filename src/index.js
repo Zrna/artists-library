@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import './index.css';
+import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -15,3 +16,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+serviceWorker.register();
