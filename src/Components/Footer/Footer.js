@@ -13,12 +13,10 @@ const Footer = () => {
         <p>
           Made by
           <a
-            href='http://www.lukazrnic.com'
+            href='https://github.com/Zrna'
             target='_blank'
             rel='noopener noreferrer'
-          >
-            Luka Zrnic
-          </a>
+          > Luka Zrnic </a>
         </p>
       </Container>
     </footer>
