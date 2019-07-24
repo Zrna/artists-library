@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8c5734377ebb0482b423",
+    "revision": "4db32b477a18f61595db",
     "url": "/artists-library/static/css/main.03f49412.chunk.css"
   },
   {
-    "revision": "8c5734377ebb0482b423",
-    "url": "/artists-library/static/js/main.3df4686a.chunk.js"
+    "revision": "4db32b477a18f61595db",
+    "url": "/artists-library/static/js/main.611228d0.chunk.js"
   },
   {
     "revision": "8e3cbcdaa1f315d42eab",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/artists-library/static/js/2.4d4dcef8.chunk.js"
   },
   {
-    "revision": "9974b9c42fe9da0938bcb147192a1aa3",
+    "revision": "bd0f498a6af988ee9f630c4fef2fbd38",
     "url": "/artists-library/index.html"
   }
 ];
