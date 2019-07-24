@@ -61,6 +61,10 @@
         "rest-spread-spacing": [
             "error",
             "never"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "never"
         ]
     }
 }
