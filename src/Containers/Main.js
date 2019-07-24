@@ -20,7 +20,7 @@ const initialState = {
 };
 
 class Main extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = initialState;
   }
@@ -42,7 +42,7 @@ class Main extends Component {
     this.setState(initialState);
   };
 
-  render () {
+  render() {
     return (
       <>
         <section>

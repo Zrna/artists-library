@@ -10,7 +10,7 @@ import '../Main.scss';
 import Loader from '../../Components/Loader/Loader';
 
 class HomePage extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       inputValue: '',
@@ -46,7 +46,7 @@ class HomePage extends Component {
     }
   };
 
-  render () {
+  render() {
     return (
       <>
         <h1 className='text-center pb-4'>

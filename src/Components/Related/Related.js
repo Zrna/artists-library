@@ -12,7 +12,7 @@ const Related = props => {
   const [error, setError] = useState(null);
 
   // setup click handler
-  const getRelatedArtists = useCallback(async () => {
+  const getRelatedArtists = useCallback(async() => {
     try {
       // fetch data from API
       const url = `${proxyurl}https://api.deezer.com`;
